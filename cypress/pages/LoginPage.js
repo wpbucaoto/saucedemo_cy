@@ -1,8 +1,4 @@
 class LoginPage {
-    static visit() {
-      cy.visit('/'); // assuming the login page is the home page of Saucedemo.com
-    }
-  
     static fillUsername(username) {
       cy.get('#user-name').type(username);
     }
