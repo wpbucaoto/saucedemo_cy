@@ -5,6 +5,7 @@ module.exports = {
     },
     excludeSpecPattern: '**/homepage.cy.js',
     //pageLoadTimeout: 50000, // or any value you want to set in milliseconds
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    "baseUrl": "https://www.saucedemo.com"
   },
 };
