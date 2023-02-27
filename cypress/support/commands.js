@@ -28,9 +28,11 @@ Cypress.Commands.add("getBySelector", (selector, value) =>{
     return cy.get(`[${selector}="${value}"]`)
 })
 
-Cypress.Commands.add('login', (username, password) => {
-    cy.get('#user-name').type(username);
-    cy.get('#password').type(password);
-    cy.get('#login-button').click();
-  });  
-  
+Cypress.Commands.add('login', (user) => {
+    cy.fixture("login").then(function(login){
+        cy.visit('/');
+        cy.get('#user-name').type(login[user].username);
+        cy.get('#password').type(login[user].password);
+        cy.get('#login-button').click();
+  });
+});
